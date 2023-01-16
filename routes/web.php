@@ -1,6 +1,11 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Livewire\Hasil;
+use App\Http\Livewire\InputAgama;
+use App\Http\Livewire\InputMicro;
+use App\Http\Livewire\InputPendaftar;
+use App\Http\Livewire\InputWawancara;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +28,13 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+
+    Route::get('input-pendaftar', InputPendaftar::class)->name('input-pendaftar');
+    Route::get('input-agama', InputAgama::class)->name('input-agama');
+    Route::get('input-micro', InputMicro::class)->name('input-micro');
+    Route::get('input-wawancara', InputWawancara::class)->name('input-wawancara');
+    Route::get('hasil', Hasil::class)->name('hasil');
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
