@@ -43,7 +43,7 @@
                             class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             <div class="flex flex-col justify-center items-center">
                                 <div>
-                                    <img src="{{ asset('storage/' . $pendaftar->foto) }}" alt="foto"
+                                    <img src="{{ asset('storage/app/' . $pendaftar->foto) }}" alt="foto"
                                     class=" h-20 w-20">
                                 </div>
                                 <div class="font-bold capitalize">
