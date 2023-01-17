@@ -5,23 +5,23 @@
             <div class="lg:grid lg:grid-cols-4 lg:gap-2 lg:space-y-0 flex flex-col space-y-4">
                 <x-select label="Nama" wire:model="pendaftar_id" placeholder="Pilih Nama" :async-data="route('pendaftar')"
                     option-label="nama" option-value="id" />
-                <x-input type="number" wire:model.defer="rpp" label="Tajwid Al Qur'an" corner-hint="(1 - 25)" />
-                <x-input type="number" wire:model.defer="materi" label="Kelancaran Al Qur'an"
+                <x-input type="number" wire:model.defer="rpp" label="Kesesuaian dengan RPP" corner-hint="(1 - 25)" />
+                <x-input type="number" wire:model.defer="materi" label="Pengusaaan materi"
                     corner-hint="(1 - 25)" />
-                <x-input type="number" wire:model.defer="metode" label="Do'a Iftitah" corner-hint="(1 - 25)" />
+                <x-input type="number" wire:model.defer="metode" label="Metode pembelajaran" corner-hint="(1 - 25)" />
             </div>
             <div class="lg:grid lg:grid-cols-4 lg:gap-2 lg:space-y-0 flex flex-col space-y-4">
-                <x-input type="number" wire:model.defer="kelas" label="Tajwid Al Qur'an" corner-hint="(1 - 25)" />
-                <x-input type="number" wire:model.defer="rpp_detail" label="Tajwid Al Qur'an"
+                <x-input type="number" wire:model.defer="kelas" label="Pengusaan kelas" corner-hint="(1 - 25)" />
+                <x-input type="number" wire:model.defer="rpp_detail" label="RPP memuat identitas mapel, alokasi waktu, KI KD, CP, TP,Materi, Metode, Sumber, Media, Kegiatan, dan Penilaian hasil pembelajaran"
                     corner-hint="(1 - 20)" />
-                <x-input type="number" wire:model.defer="sistematika" label="Kelancaran Al Qur'an"
+                <x-input type="number" wire:model.defer="sistematika" label="Sistematika runtut sesuai kriteria penilaian 1"
                     corner-hint="(1 - 10)" />
-                <x-input type="number" wire:model.defer="tujuan" label="Do'a Iftitah" corner-hint="(1 - 20)" />
+                <x-input type="number" wire:model.defer="tujuan" label="Tujuan pembelajaran sesuai KI dan KD" corner-hint="(1 - 20)" />
             </div>
             <div class="lg:grid lg:grid-cols-4 lg:gap-2 lg:space-y-0 flex flex-col space-y-4">
-                <x-input type="number" wire:model.defer="karakter" label="Tajwid Al Qur'an" corner-hint="(1 - 10)" />
-                <x-input type="number" wire:model.defer="inovatif" label="Tajwid Al Qur'an" corner-hint="(1 - 20)" />
-                <x-input type="number" wire:model.defer="kegiatan_inti" label="Kelancaran Al Qur'an"
+                <x-input type="number" wire:model.defer="karakter" label="Terdapat penguatan karakter siswa yang diharapkan" corner-hint="(1 - 10)" />
+                <x-input type="number" wire:model.defer="inovatif" label="Menggunakan metode pembelajaran yang tepat dan inovatif" corner-hint="(1 - 20)" />
+                <x-input type="number" wire:model.defer="kegiatan_inti" label="Pada kegiatan inti memuat kegiatan mengamati, menanya, mengumpulkan data, mengasosiasi, dan mengkomunikasikan"
                     corner-hint="(1 - 20)" />
                 <x-input wire:model.defer="catatan" label="Catatan" />
             </div>
