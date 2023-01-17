@@ -23,7 +23,7 @@ class InitSeeder extends Seeder
                     'username' => 'taqi',
                 ],
                 [
-                    'name' => 'Fathurrohman,S.Pd.I',
+                    'name' => 'Fathurrohman,S.Pd',
                     'username' => 'fathur',
                 ],
                 [
@@ -31,11 +31,11 @@ class InitSeeder extends Seeder
                     'username' => 'imam',
                 ],
                 [
-                    'name' => 'Muh Syifa Aiza Aista,S.Pd.I',
+                    'name' => 'Muh Syifa Aiza Aista,S.Pd',
                     'username' => 'iza',
                 ],
                 [
-                    'name' => 'Nur Khoironi AH,S.Ag',
+                    'name' => 'Nurkhaeroni Alamul Huda,S.Ag',
                     'username' => 'roni',
                 ],
                 [
@@ -49,6 +49,18 @@ class InitSeeder extends Seeder
                 [
                     'name' => 'Ristiono,S.Pd',
                     'username' => 'sir',
+                ],
+                [
+                    'name' => 'Rizka Elistanti,S.Pd',
+                    'username' => 'elis',
+                ],
+                [
+                    'name' => 'Moh Arif Rahman,S.Pd',
+                    'username' => 'arif',
+                ],
+                [
+                    'name' => 'Laili Mawadah,S.Pd.Gr.',
+                    'username' => 'laili',
                 ],
 
             ];

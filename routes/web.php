@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Livewire\Hasil;
 use App\Http\Livewire\InputAgama;
@@ -28,6 +29,10 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+
+
+    // Api
+    Route::get('pendaftar', [ApiController::class, 'pendaftar'])->name('pendaftar');
 
     Route::get('input-pendaftar', InputPendaftar::class)->name('input-pendaftar');
     Route::get('input-agama', InputAgama::class)->name('input-agama');
