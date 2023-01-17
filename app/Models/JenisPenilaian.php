@@ -6,18 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Agama extends Model
+class JenisPenilaian extends Model
 {
     use HasFactory;
     protected $guarded = [];
 
     /**
-     * Get the user that owns the Agama
+     * Get the kategori that owns the JenisPenilaian
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function user(): BelongsTo
+    public function kategori(): BelongsTo
     {
-        return $this->belongsTo(User::class)->withDefault();
+        return $this->belongsTo(KategoriNilai::class)->withDefault();
     }
 }

@@ -2,8 +2,9 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Wawancara;
 use Livewire\Component;
+use App\Models\Penilaian;
+use App\Models\Wawancara;
 use WireUi\Traits\Actions;
 
 class InputWawancara extends Component
@@ -61,7 +62,7 @@ class InputWawancara extends Component
                 $this->taat +
                 $this->fisik +
                 $this->kecakapan;
-                
+
             Wawancara::updateOrCreate(
                 [
                     'user_id' => auth()->user()->id,
@@ -80,6 +81,116 @@ class InputWawancara extends Component
                     'fisik' => $this->fisik,
                     'kecakapan' => $this->kecakapan,
                     'catatan' => $this->catatan,
+                ]
+            );
+
+            Penilaian::updateOrCreate(
+                [
+                    'pendaftar_id' => $this->pendaftar_id,
+                    'kategori_nilai_id' => 3,
+                    'jenis_penilaian_id' => 15
+                ],
+                [
+                    'nilai' => $this->motivasi
+                ]
+            );
+
+            Penilaian::updateOrCreate(
+                [
+                    'pendaftar_id' => $this->pendaftar_id,
+                    'kategori_nilai_id' => 3,
+                    'jenis_penilaian_id' => 16
+                ],
+                [
+                    'nilai' => $this->kiat
+                ]
+            );
+
+            Penilaian::updateOrCreate(
+                [
+                    'pendaftar_id' => $this->pendaftar_id,
+                    'kategori_nilai_id' => 3,
+                    'jenis_penilaian_id' => 17
+                ],
+                [
+                    'nilai' => $this->mengatasi
+                ]
+            );
+
+            Penilaian::updateOrCreate(
+                [
+                    'pendaftar_id' => $this->pendaftar_id,
+                    'kategori_nilai_id' => 3,
+                    'jenis_penilaian_id' => 18
+                ],
+                [
+                    'nilai' => $this->memperlakukan
+                ]
+            );
+
+            Penilaian::updateOrCreate(
+                [
+                    'pendaftar_id' => $this->pendaftar_id,
+                    'kategori_nilai_id' => 3,
+                    'jenis_penilaian_id' => 19
+                ],
+                [
+                    'nilai' => $this->bekerja
+                ]
+            );
+
+            Penilaian::updateOrCreate(
+                [
+                    'pendaftar_id' => $this->pendaftar_id,
+                    'kategori_nilai_id' => 3,
+                    'jenis_penilaian_id' => 20
+                ],
+                [
+                    'nilai' => $this->gaji
+                ]
+            );
+
+            Penilaian::updateOrCreate(
+                [
+                    'pendaftar_id' => $this->pendaftar_id,
+                    'kategori_nilai_id' => 3,
+                    'jenis_penilaian_id' => 21
+                ],
+                [
+                    'nilai' => $this->bakat
+                ]
+            );
+
+            Penilaian::updateOrCreate(
+                [
+                    'pendaftar_id' => $this->pendaftar_id,
+                    'kategori_nilai_id' => 3,
+                    'jenis_penilaian_id' => 22
+                ],
+                [
+                    'nilai' => $this->taat
+                ]
+            );
+
+            Penilaian::updateOrCreate(
+                [
+                    'pendaftar_id' => $this->pendaftar_id,
+                    'kategori_nilai_id' => 3,
+                    'jenis_penilaian_id' => 23
+                ],
+                [
+                    'nilai' => $this->fisik
+                ]
+            );
+
+            Penilaian::updateOrCreate(
+                [
+                    'pendaftar_id' => $this->pendaftar_id,
+                    'kategori_nilai_id' => 3,
+                    'jenis_penilaian_id' => 24
+                ],
+                [
+                    'nilai' => $this->kecakapan
                 ]
             );
 

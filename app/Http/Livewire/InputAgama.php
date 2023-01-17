@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Agama;
+use App\Models\Penilaian;
 use Livewire\Component;
 use WireUi\Traits\Actions;
 
@@ -38,7 +39,7 @@ class InputAgama extends Component
         $this->validate();
 
         try {
-            
+
             $this->nilai = $this->tajwid + $this->kelancaran + $this->iftitah + $this->qunut;
             Agama::updateOrCreate(
                 [
@@ -54,7 +55,47 @@ class InputAgama extends Component
                     'catatan' => $this->catatan,
                 ]
             );
-            
+
+            Penilaian::updateOrCreate(
+                [
+                    'pendaftar_id' => $this->pendaftar_id,
+                    'kategori_nilai_id' => 1,
+                    'jenis_penilaian_id' => 1
+                ],
+                [
+                    'nilai' => $this->tajwid
+                ]
+            );
+            Penilaian::updateOrCreate(
+                [
+                    'pendaftar_id' => $this->pendaftar_id,
+                    'kategori_nilai_id' => 1,
+                    'jenis_penilaian_id' => 2
+                ],
+                [
+                    'nilai' => $this->kelancaran
+                ]
+            );
+            Penilaian::updateOrCreate(
+                [
+                    'pendaftar_id' => $this->pendaftar_id,
+                    'kategori_nilai_id' => 1,
+                    'jenis_penilaian_id' => 3
+                ],
+                [
+                    'nilai' => $this->iftitah
+                ]
+            );
+            Penilaian::updateOrCreate(
+                [
+                    'pendaftar_id' => $this->pendaftar_id,
+                    'kategori_nilai_id' => 1,
+                    'jenis_penilaian_id' => 4
+                ],
+                [
+                    'nilai' => $this->qunut
+                ]
+            );
             $this->notification()->success(
                 $title = 'Berhasil',
                 $description = 'Berhasil Simpan Seleksi Agama'

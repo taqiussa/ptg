@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Micro;
 use Livewire\Component;
+use App\Models\Penilaian;
 use WireUi\Traits\Actions;
 
 class InputMicro extends Component
@@ -61,6 +62,7 @@ class InputMicro extends Component
                 $this->karakter +
                 $this->inovatif +
                 $this->kegiatan_inti;
+
             Micro::updateOrCreate(
                 [
                     'user_id' => auth()->user()->id,
@@ -79,6 +81,107 @@ class InputMicro extends Component
                     'inovatif' => $this->inovatif,
                     'kegiatan_inti' => $this->kegiatan_inti,
                     'catatan' => $this->catatan,
+                ]
+            );
+
+            Penilaian::updateOrCreate(
+                [
+                    'pendaftar_id' => $this->pendaftar_id,
+                    'kategori_nilai_id' => 2,
+                    'jenis_penilaian_id' => 5
+                ],
+                [
+                    'nilai' => $this->rpp
+                ]
+            );
+            Penilaian::updateOrCreate(
+                [
+                    'pendaftar_id' => $this->pendaftar_id,
+                    'kategori_nilai_id' => 2,
+                    'jenis_penilaian_id' => 6
+                ],
+                [
+                    'nilai' => $this->materi
+                ]
+            );
+            Penilaian::updateOrCreate(
+                [
+                    'pendaftar_id' => $this->pendaftar_id,
+                    'kategori_nilai_id' => 2,
+                    'jenis_penilaian_id' => 7
+                ],
+                [
+                    'nilai' => $this->metode
+                ]
+            );
+            Penilaian::updateOrCreate(
+                [
+                    'pendaftar_id' => $this->pendaftar_id,
+                    'kategori_nilai_id' => 2,
+                    'jenis_penilaian_id' => 8
+                ],
+                [
+                    'nilai' => $this->kelas
+                ]
+            );
+            Penilaian::updateOrCreate(
+                [
+                    'pendaftar_id' => $this->pendaftar_id,
+                    'kategori_nilai_id' => 2,
+                    'jenis_penilaian_id' => 9
+                ],
+                [
+                    'nilai' => $this->rpp_detail
+                ]
+            );
+            Penilaian::updateOrCreate(
+                [
+                    'pendaftar_id' => $this->pendaftar_id,
+                    'kategori_nilai_id' => 2,
+                    'jenis_penilaian_id' => 10
+                ],
+                [
+                    'nilai' => $this->sistematika
+                ]
+            );
+            Penilaian::updateOrCreate(
+                [
+                    'pendaftar_id' => $this->pendaftar_id,
+                    'kategori_nilai_id' => 2,
+                    'jenis_penilaian_id' => 11
+                ],
+                [
+                    'nilai' => $this->tujuan
+                ]
+            );
+            Penilaian::updateOrCreate(
+                [
+                    'pendaftar_id' => $this->pendaftar_id,
+                    'kategori_nilai_id' => 2,
+                    'jenis_penilaian_id' => 12
+                ],
+                [
+                    'nilai' => $this->karakter
+                ]
+            );
+            Penilaian::updateOrCreate(
+                [
+                    'pendaftar_id' => $this->pendaftar_id,
+                    'kategori_nilai_id' => 2,
+                    'jenis_penilaian_id' => 13
+                ],
+                [
+                    'nilai' => $this->inovatif
+                ]
+            );
+            Penilaian::updateOrCreate(
+                [
+                    'pendaftar_id' => $this->pendaftar_id,
+                    'kategori_nilai_id' => 2,
+                    'jenis_penilaian_id' => 14
+                ],
+                [
+                    'nilai' => $this->kegiatan_inti
                 ]
             );
 

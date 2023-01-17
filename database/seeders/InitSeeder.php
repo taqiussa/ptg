@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\JenisPenilaian;
+use App\Models\KategoriNilai;
 use App\Models\MataPelajaran;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -104,5 +106,130 @@ class InitSeeder extends Seeder
                 ]
             );
         }
+
+        $listKategori =
+            [
+                [
+                    'nama' => 'Agama'
+                ],
+                [
+                    'nama' => 'Micro Teaching'
+                ],
+                [
+                    'nama' => 'Wawancara'
+                ],
+            ];
+
+        $listJenisAgama =
+            [
+                [
+                    'kategori_nilai_id' => 1,
+                    'nama' => 'tajwid',
+                ],
+                [
+                    'kategori_nilai_id' => 1,
+                    'nama' => 'kelancaran',
+                ],
+                [
+                    'kategori_nilai_id' => 1,
+                    'nama' => 'iftitah',
+                ],
+                [
+                    'kategori_nilai_id' => 1,
+                    'nama' => 'qunut',
+                ],
+            ];
+
+        $listJenisMicro =
+            [
+                [
+                    'kategori_nilai_id' => 2,
+                    'nama' => 'rpp',
+                ],
+                [
+                    'kategori_nilai_id' => 2,
+                    'nama' => 'materi',
+                ],
+                [
+                    'kategori_nilai_id' => 2,
+                    'nama' => 'metode',
+                ],
+                [
+                    'kategori_nilai_id' => 2,
+                    'nama' => 'kelas',
+                ],
+                [
+                    'kategori_nilai_id' => 2,
+                    'nama' => 'rpp_detail',
+                ],
+                [
+                    'kategori_nilai_id' => 2,
+                    'nama' => 'sistematika',
+                ],
+                [
+                    'kategori_nilai_id' => 2,
+                    'nama' => 'tujuan',
+                ],
+                [
+                    'kategori_nilai_id' => 2,
+                    'nama' => 'karakter',
+                ],
+                [
+                    'kategori_nilai_id' => 2,
+                    'nama' => 'inovatif',
+                ],
+                [
+                    'kategori_nilai_id' => 2,
+                    'nama' => 'kegiatan_inti',
+                ],
+            ];
+
+        $listWawancara = [
+            [
+                'kategori_nilai_id' => 3,
+                'nama' => 'motivasi'
+            ],
+            [
+                'kategori_nilai_id' => 3,
+                'nama' => 'kiat'
+            ],
+            [
+                'kategori_nilai_id' => 3,
+                'nama' => 'mengatasi'
+            ],
+            [
+                'kategori_nilai_id' => 3,
+                'nama' => 'memperlakukan'
+            ],
+            [
+                'kategori_nilai_id' => 3,
+                'nama' => 'bekerja'
+            ],
+            [
+                'kategori_nilai_id' => 3,
+                'nama' => 'gaji'
+            ],
+            [
+                'kategori_nilai_id' => 3,
+                'nama' => 'bakat'
+            ],
+            [
+                'kategori_nilai_id' => 3,
+                'nama' => 'taat'
+            ],
+            [
+                'kategori_nilai_id' => 3,
+                'nama' => 'fisik'
+            ],
+            [
+                'kategori_nilai_id' => 3,
+                'nama' => 'kecakapan'
+            ],
+        ];
+
+        KategoriNilai::insert($listKategori);
+        JenisPenilaian::insert($listJenisAgama);
+        JenisPenilaian::insert($listJenisMicro);
+        JenisPenilaian::insert($listWawancara);
     }
 }
