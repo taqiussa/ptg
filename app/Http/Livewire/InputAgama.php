@@ -21,11 +21,10 @@ class InputAgama extends Component
 
     protected $rules = [
         'pendaftar_id' => 'required',
-        'tajwid' => 'required',
-        'kelancaran' => 'required',
-        'iftitah' => 'required',
-        'qunut' => 'required',
-        'nilai' => 'required',
+        'tajwid' => 'required|numeric|min:10|max:25',
+        'kelancaran' => 'required|numeric|min:10|max:25',
+        'iftitah' => 'required|numeric|min:10|max:25',
+        'qunut' => 'required|numeric|min:10|max:25',
         'catatan' => 'required'
     ];
 
@@ -39,6 +38,7 @@ class InputAgama extends Component
         $this->validate();
 
         try {
+            
             $this->nilai = $this->tajwid + $this->kelancaran + $this->iftitah + $this->qunut;
             Agama::updateOrCreate(
                 [
@@ -53,6 +53,11 @@ class InputAgama extends Component
                     'nilai' => $this->nilai,
                     'catatan' => $this->catatan,
                 ]
+            );
+            
+            $this->notification()->success(
+                $title = 'Berhasil',
+                $description = 'Berhasil Simpan Seleksi Agama'
             );
         } catch (\Throwable $th) {
             throw $th;
