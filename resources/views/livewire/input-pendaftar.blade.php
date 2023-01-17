@@ -40,7 +40,7 @@
                 </div>
             @endif
         </div>
-        <div class="flex justify-end">
+        <div wire:loading.remove wire:target="foto" class="flex justify-end">
             <x-button wire:click.prevent="simpan" secondary label="simpan" spinner="simpan" loading-delay="short"
                 class="w-auto" />
         </div>

@@ -11,6 +11,7 @@
         <h1 class="block py-8 text-2xl font-bold text-slate-500">{{ auth()->user()->name }}</h1>
 
         <x-sidebar-link :href="__('dashboard')" :label="__('dashboard')" />
+        <x-sidebar-link :href="__('data-pendaftar')" :label="__('data pendaftar')" />
         <x-sidebar-link :href="__('input-pendaftar')" :label="__('input pendaftar')" />
         <x-sidebar-link :href="__('input-agama')" :label="__('input agama')" />
         <x-sidebar-link :href="__('input-micro')" :label="__('input micro teaching')" />
